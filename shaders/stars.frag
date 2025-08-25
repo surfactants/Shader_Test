@@ -3,13 +3,16 @@ precision mediump float;
 #endif
 
 uniform vec2 u_resolution;
+const float base_light = 0.99;
+
+// test with sf::VertexArray
 
 void main()
 {
-    float r = 0.0;
-    float g = 0.0;
-    float b = 0.0;
-    float a = 1.0;
+    float light = base_light;
+    float r = light;
+    float b = light;
+    float a = light;
     gl_FragColor = vec4(r, g, b, a);
 }
 
