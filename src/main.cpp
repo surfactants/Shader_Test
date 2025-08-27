@@ -42,6 +42,15 @@ int main()
     sf::Event event;
     sf::Clock shader_clock;
 
+    // load drawable
+    sf::Drawable* drawable { nullptr };
+if (shader_key == "stars") {
+    //drawable = new Stars();
+}
+else if (shader_key == "whatever) {
+    // etc
+}
+
     // WINDOW LOOP
     while (window.isOpen()) {
         while (window.pollEvent(event)) {
@@ -57,6 +66,13 @@ int main()
         shader.setUniform("u_mouse", fmouse);
 
         window.clear();
+        if (drawable) {
+            window.draw(backdrop);
+            window.draw(*drawable, &shader);
+        }
+        else {
+            window.draw(backdrop, &shader);
+        }
         window.draw(backdrop, &shader);
         window.display();
     }
