@@ -47,7 +47,7 @@ int main()
 if (shader_key == "stars") {
     //drawable = new Stars();
 }
-else if (shader_key == "whatever) {
+else if (shader_key == "whatever") {
     // etc
 }
 
