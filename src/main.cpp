@@ -16,7 +16,11 @@ int main()
 
     // create shader
     sf::Shader shader;
-    if (!shader.loadFromFile(chooseShader(), sf::Shader::Fragment)) {
+    std::string shader_key = chooseShader();
+    const std::string directory = "shaders/";
+    const std::string extension = ".frag";
+    std::string shader_file = directory + shader_key + extension;
+    if (!shader.loadFromFile(shader_file, sf::Shader::Fragment)) {
         return 0;
     }
 
