@@ -30,5 +30,5 @@ std::string chooseShader()
             std::cout << "That index is out of bounds. Please try again:\n";
         }
     } while (choice >= file_count);
-    return std::string(directory + files[choice] + extension);
+    return std::string(files[choice]);
 }
