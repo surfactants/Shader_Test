@@ -6,6 +6,8 @@
 #include "choose_shader.hpp"
 #include "prng.hpp"
 
+#include "shaders/stars.hpp"
+
 int main()
 {
     // check shader availability
@@ -44,12 +46,12 @@ int main()
 
     // load drawable
     sf::Drawable* drawable { nullptr };
-if (shader_key == "stars") {
-    //drawable = new Stars();
-}
-else if (shader_key == "whatever") {
-    // etc
-}
+    if (shader_key == "stars") {
+        drawable = new Stars(window_size);
+    }
+    else if (shader_key == "whatever") {
+        // etc
+    }
 
     // WINDOW LOOP
     while (window.isOpen()) {
@@ -73,7 +75,6 @@ else if (shader_key == "whatever") {
         else {
             window.draw(backdrop, &shader);
         }
-        window.draw(backdrop, &shader);
         window.display();
     }
 
