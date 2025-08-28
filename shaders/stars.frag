@@ -19,7 +19,7 @@ void main()
     vec2 st = (gl_FragCoord.xy / u_resolution.xy);
     float light = rand(st);
     light *= light_factor;
-    light += light_base
+    light += light_base;
 
     gl_FragColor = vec4(vec3(light), 1.0);
 }
