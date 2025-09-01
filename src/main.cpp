@@ -4,9 +4,12 @@
 #include <windows.h>
 
 #include "choose_shader.hpp"
+#include "primordial.hpp"
 #include "prng.hpp"
 
 #include "shaders/stars.hpp"
+
+// explore LYGIA
 
 int main()
 {
@@ -53,6 +56,8 @@ int main()
         // etc
     }
 
+    sf::Vector2f center = window_size / 2.f;
+
     // WINDOW LOOP
     while (window.isOpen()) {
         while (window.pollEvent(event)) {
@@ -63,9 +68,12 @@ int main()
         const sf::Vector2f fmouse(sf::Mouse::getPosition());
         const float t = shader_clock.getElapsedTime().asSeconds();
 
+        float angle = calculateAngle(center, fmouse);
+        std::cout << angle << "\n";
         shader.setUniform("u_time", t);
         shader.setUniform("u_resolution", window_size);
         shader.setUniform("u_mouse", fmouse);
+        shader.setUniform("u_angle", calculateAngle(fmouse, center));
 
         window.clear();
         if (drawable) {

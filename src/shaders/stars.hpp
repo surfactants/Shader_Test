@@ -6,6 +6,7 @@ public:
 
 private:
     sf::VertexArray vertices { sf::Points };
+    std::vector<sf::CircleShape> circles;
 
     virtual void draw(sf::RenderTarget& target, sf::RenderStates states) const;
 };
