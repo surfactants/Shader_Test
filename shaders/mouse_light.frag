@@ -2,12 +2,12 @@
 precision mediump float;
 #endif
 
+// draws a pulsing circular light centered on the mouse
+
 uniform float u_time;
 uniform vec2 u_resolution;
 uniform vec2 u_mouse;
 const float radius = 1.0;
-
-// draws a pulsing circular light centered on the mouse
 
 void main()
 {
