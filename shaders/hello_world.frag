@@ -6,6 +6,7 @@ uniform float u_time;
 uniform vec2 u_resolution;
 uniform vec2 u_mouse;
 
+// gamer rgb light
 void main()
 {
     float r = sin(u_time);
