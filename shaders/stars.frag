@@ -2,6 +2,8 @@
 precision mediump float;
 #endif
 
+// changes lighting to achieve a twinkling star effects
+
 uniform vec2 u_resolution;
 uniform float u_time;
 
